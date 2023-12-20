@@ -16,8 +16,16 @@ public class Sum {
       //  sum();
 
 
-        int ans = sum2();
-        System.out.println(ans);
+//        int ans = sum2();
+//        System.out.println(ans);
+
+
+        int answer = getAnswer(23,45);
+        System.out.println(answer);
+    }
+
+    private static int getAnswer(int a, int b) {
+        return a+b;
     }
 
     static void sum(){
