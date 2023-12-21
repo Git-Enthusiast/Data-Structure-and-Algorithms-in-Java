@@ -8,8 +8,8 @@ public class PassingExample {
         greet(superhero);
     }
 
-    private static void greet(String naam) {
+    private static void greet(String name) {
 
-        System.out.println(naam);
+        System.out.println(name);
     }
 }
