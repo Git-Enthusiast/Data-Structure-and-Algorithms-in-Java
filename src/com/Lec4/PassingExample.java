@@ -4,7 +4,7 @@ package com.Lec4;
 
 public class PassingExample {
     public static void main(String[] args) {
-        String superhero = "Iron Man";
+        String superhero = "Super Man";
         greet(superhero);
     }
 
