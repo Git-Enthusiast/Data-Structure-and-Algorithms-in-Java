@@ -1,14 +1,17 @@
-package com.Practice.Loops;
+package com.Practice.SpecialNumber;
 
-public class PerfectNo2 {
+public class PerfectNo {
     public static void main(String[] args) {
-        System.out.println("Total no perfect no between 100 to 1000 is: ");
-        for (int i = 100; i<=1000;i++){
-            if (isPerfectNumber(i)){
-                System.out.println(i);
-            }
+        int number = 28;
+
+        if (isPerfectNumber(number)) {
+            System.out.println(number + " is a perfect number.");
+        } else {
+            System.out.println(number + " is not a perfect number.");
         }
     }
+
+
     private static boolean isPerfectNumber(int num) {
         int sum = 0;
 
@@ -21,3 +24,4 @@ public class PerfectNo2 {
         return sum == num;
     }
 }
+

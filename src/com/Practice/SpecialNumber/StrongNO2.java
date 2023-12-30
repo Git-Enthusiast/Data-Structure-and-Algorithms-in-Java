@@ -1,17 +1,15 @@
-package com.Practice.Loops;
+package com.Practice.SpecialNumber;
 
-public class StrongNo {
+public class StrongNO2 {
     public static void main(String[] args) {
-        int number = 145;
+        System.out.println("Strong numbers between 100 and 1000:");
 
-        if (isStrongNumber(number)) {
-            System.out.println(number + " is a strong number.");
-        } else {
-            System.out.println(number + " is not a strong number.");
+        for (int i = 100; i <= 1000; i++) {
+            if (isStrongNumber(i)) {
+                System.out.println(i);
+            }
         }
     }
-
-
     private static boolean isStrongNumber(int num) {
         int originalNumber = num;
         int sum = 0;
@@ -34,4 +32,3 @@ public class StrongNo {
         }
     }
 }
-

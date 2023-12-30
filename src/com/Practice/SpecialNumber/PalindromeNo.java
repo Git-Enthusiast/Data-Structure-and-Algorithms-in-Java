@@ -1,4 +1,4 @@
-package com.Practice.Loops;
+package com.Practice.SpecialNumber;
 
 public class PalindromeNo {
 

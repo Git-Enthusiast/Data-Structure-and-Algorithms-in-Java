@@ -1,14 +1,21 @@
-package com.Practice.Loops;
+package com.Practice.SpecialNumber;
 
-public class ArmstrongNo2 {
+public class ArmstrongNo3 {
     public static void main(String[] args) {
-        System.out.println("The no of Armstrong no between 100 to 1000 is :");
-        for (int i= 100; i<1000;i++){
-            if (isArmstrongNumber(i)){
-                System.out.println(i);
+        int count =0;
+        int num =1;
+        while (count<10){
+            if (isArmstrongNumber(num)){
+                count++;
+                if (count==10){
+                    System.out.println("The 10th Armstrong no is:"+num);
+                }
             }
 
+            num++;
         }
+
+
     }
     private static boolean isArmstrongNumber(int num) {
         int originalNumber = num;
