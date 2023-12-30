@@ -2,7 +2,7 @@ package com.Lec2;
 
 public class Reverse {
     public static void main(String[] args) {
-        int  n = 9375825;
+        int  n = 543;
         int ans = 0;
         while (n>0){
             int rem = n % 10;
