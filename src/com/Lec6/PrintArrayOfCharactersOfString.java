@@ -1,12 +1,15 @@
 package com.Lec6;
 
+import java.util.Arrays;
+
 // to print Array of characters of a string.
 public class PrintArrayOfCharactersOfString {
     public static void main(String[] args) {
         String str ="Hi, This is Rajan Raj";
         ArrayOfCharacters(str);
-        ArrayOfCharactersWithoutSpaces(str);
-       // System.out.println(str.toCharArray());
+//        ArrayOfCharactersWithoutSpaces(str);
+        char[] arr = str.toCharArray();
+        System.out.println(Arrays.toString(arr));
     }
 
     // to print array of char with spaces.
