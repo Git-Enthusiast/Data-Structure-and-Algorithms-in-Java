@@ -1,19 +1,25 @@
 package com.Lec6;
 
 // to print Array of characters of a string.
-public class PrintArrayOfString {
+public class PrintArrayOfCharactersOfString {
     public static void main(String[] args) {
-        String str ="Hi, This is Rajan Raj.";
+        String str ="Hi, This is Rajan Raj";
         ArrayOfCharacters(str);
         ArrayOfCharactersWithoutSpaces(str);
+       // System.out.println(str.toCharArray());
     }
 
     // to print array of char with spaces.
     private static void ArrayOfCharacters(String str) {
         char[] arr = str.toCharArray();
+        boolean first = true;
         System.out.print("Characters as an array (with spaces): [");
-        for (int i = 0;i<arr.length;i++){
-            System.out.print( arr[i]+" ,");
+        for (char c : arr) {
+            if (!first) {
+                System.out.print(", ");
+            }
+            System.out.print(c);
+            first = false;
         }
         System.out.println("]");
     }
@@ -21,9 +27,8 @@ public class PrintArrayOfString {
     private static void ArrayOfCharactersWithoutSpaces(String str){
         // Convert the string to an array of characters
         char[] charArray = str.toCharArray();
-
+        System.out.println(charArray);
         // Print characters as an array (ignoring spaces)
-        System.out.println("Original String: " + str);
         System.out.print("Characters as an array (ignoring spaces): [");
         boolean first = true;
         for (char ch : charArray) {
@@ -31,7 +36,7 @@ public class PrintArrayOfString {
                 if (!first) {
                     System.out.print(", ");
                 }
-                System.out.print("'" + ch + "'");
+                System.out.print( ch );
                 first = false;
             }
         }
