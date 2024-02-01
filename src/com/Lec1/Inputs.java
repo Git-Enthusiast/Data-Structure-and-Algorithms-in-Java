@@ -10,6 +10,7 @@ public class Inputs {
 //        System.out.println("Your Roll no is:"+ Roll);
 //        int a = 234_000_000;
 //        System.out.println(a);
+        System.out.println("Enter name:");
         String name = input.nextLine();
         System.out.println(name);
     }
