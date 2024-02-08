@@ -10,8 +10,11 @@ public class CaseCheck {
         if (ch >= 'a'&& ch<='z'){
             System.out.println(ch+" is LowerCase Alphabet.");
         }
-        else {
+        else if (ch >= 'A'&& ch<='Z'){
             System.out.println(ch+" is UpperCase Alphabet.");
+        }
+        else {
+            System.out.println(ch+" Invalid Input.");
         }
 
     }
