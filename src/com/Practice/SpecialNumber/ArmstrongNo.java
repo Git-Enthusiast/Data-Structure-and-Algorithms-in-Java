@@ -17,7 +17,7 @@ public class ArmstrongNo {
 
         while (num > 0) {
             int digit = num % 10;
-            sum += Math.pow(digit, numberOfDigits);
+            sum += (int) Math.pow(digit, numberOfDigits);
             num /= 10;
         }
 
