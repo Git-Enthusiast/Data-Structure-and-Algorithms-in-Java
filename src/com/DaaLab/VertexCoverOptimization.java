@@ -60,8 +60,19 @@ class VertexCoverOptimization {
             graph.addEdge(v, w);
         }
 
+        long startTime = System.currentTimeMillis(); // Record start time
+
         graph.printVertexCover();
 
+        long endTime = System.currentTimeMillis(); // Record end time
+
+        printExecutionTime(startTime, endTime);
+
         scanner.close();
+    }
+
+    // Utility function to print execution time
+    public static void printExecutionTime(long startTime, long endTime) {
+        System.out.println("\nExecution Time: " + (endTime - startTime) + " milliseconds");
     }
 }
