@@ -20,10 +20,16 @@ public class QuickSort {
         System.out.println("Original Array:");
         printArray(arr);
 
+        long startTime = System.currentTimeMillis(); // Record start time
+
         quickSort(arr, 0, size - 1);
+
+        long endTime = System.currentTimeMillis(); // Record end time
 
         System.out.println("\nSorted Array:");
         printArray(arr);
+
+        printExecutionTime(startTime, endTime);
 
         input.close();
     }
@@ -68,5 +74,10 @@ public class QuickSort {
             System.out.print(value + " ");
         }
         System.out.println();
+    }
+
+    // Utility function to print execution time
+    public static void printExecutionTime(long startTime, long endTime) {
+        System.out.println("Execution Time: " + (endTime - startTime) + " milliseconds");
     }
 }

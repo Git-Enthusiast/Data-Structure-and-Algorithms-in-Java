@@ -20,10 +20,16 @@ public class MergeSort {
         System.out.println("Original Array:");
         printArray(arr);
 
+        long startTime = System.currentTimeMillis(); // Record start time
+
         mergeSort(arr);
+
+        long endTime = System.currentTimeMillis(); // Record end time
 
         System.out.println("\nSorted Array:");
         printArray(arr);
+
+        printExecutionTime(startTime, endTime);
 
         scanner.close();
     }
@@ -75,5 +81,9 @@ public class MergeSort {
         }
         System.out.println();
     }
-}
 
+    // Utility function to print execution time
+    public static void printExecutionTime(long startTime, long endTime) {
+        System.out.println("Execution Time: " + (endTime - startTime) + " milliseconds");
+    }
+}
