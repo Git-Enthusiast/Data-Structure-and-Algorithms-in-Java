@@ -13,8 +13,7 @@ public class Greeting {
     }
 
     private static String getGreet(String name) {
-        String mess = "Hey, "+name+" How are you ?";
-        return  mess;
+        return "Hey, "+name+" How are you ?";
     }
 
     static void greeting(){
