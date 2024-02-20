@@ -10,6 +10,6 @@ public class PassingExample {
 
     private static void greet(String name) {
 
-        System.out.println(name);
+        System.out.println("Hey! "+name);
     }
 }
