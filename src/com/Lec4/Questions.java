@@ -41,6 +41,6 @@ public class Questions {
             }
             c++;
         }
-        return c * c > n;
+        return true;
     }
 }
