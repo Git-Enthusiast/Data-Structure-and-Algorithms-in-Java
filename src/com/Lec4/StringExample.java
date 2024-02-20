@@ -6,7 +6,6 @@ public class StringExample {
         System.out.println(message);
     }
     static String greet(){
-        String greet = "How are you ?";
-        return greet;
+        return "How are you ?";
     }
 }
