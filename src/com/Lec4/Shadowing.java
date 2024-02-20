@@ -1,6 +1,6 @@
 package com.Lec4;
 public class Shadowing {
-    static int x = 90; // this will be shadowed at line 9
+     static int x = 90; // this will be shadowed at line 9
     public static void main(String[] args) {
         System.out.println(x); // 90
         int x; // the class variable at line 3 is shadowed by this
