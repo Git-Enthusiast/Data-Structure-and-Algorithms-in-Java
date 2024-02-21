@@ -9,7 +9,7 @@ public class PerfectNo2 {
             }
         }
     }
-    private static boolean isPerfectNumber(int num) {
+    private  static boolean isPerfectNumber(int num) {
         int sum = 0;
 
         for (int i = 1; i <= num / 2; i++) {
