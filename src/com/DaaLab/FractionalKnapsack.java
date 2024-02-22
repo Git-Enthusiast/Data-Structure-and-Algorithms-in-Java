@@ -41,6 +41,7 @@ public class FractionalKnapsack {
         return totalValue;
     }
 
+
     public static void main(String[] args) {
         // Generate a big dataset (random weights and values)
         int dataSize = 100000;
