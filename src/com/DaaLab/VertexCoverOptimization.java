@@ -1,5 +1,22 @@
 package com.DaaLab;
 
+/*
+Enter the number of vertices: 7
+Enter the number of edges: 8
+Enter the edges (vertex1 vertex2):
+0 1
+0 2
+1 2
+1 3
+2 4
+3 5
+4 5
+5 6
+Vertex Cover:
+0 1 2 3 4 5
+Execution Time: 13 milliseconds
+
+ */
 import java.util.*;
 
 class VertexCoverOptimization {
