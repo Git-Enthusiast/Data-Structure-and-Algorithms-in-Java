@@ -18,7 +18,7 @@ distance of source  1 to 3 is 3
 distance of source  1 to 4 is -6
 distance of source  1 to 5 is -1
 distance of source  1 to 6 is 2
-Execution time: 26934700 nanoseconds
+Execution time: 29984500 nanoseconds
 
  */
 import java.util.Scanner;
@@ -75,17 +75,17 @@ public class BellmanFordUsingAdjacencyMatrix {
         System.out.println("Enter the number of vertices");
         numberofvertices = scanner.nextInt();
 
-        int adjacencymatrix[][] = new int[numberofvertices + 1][numberofvertices + 1];
+        int[][] adjacencyMatrix = new int[numberofvertices + 1][numberofvertices + 1];
         System.out.println("Enter the adjacency matrix");
         for (int sourcenode = 1; sourcenode <= numberofvertices; sourcenode++) {
             for (int destinationnode = 1; destinationnode <= numberofvertices; destinationnode++) {
-                adjacencymatrix[sourcenode][destinationnode] = scanner.nextInt();
+                adjacencyMatrix[sourcenode][destinationnode] = scanner.nextInt();
                 if (sourcenode == destinationnode) {
-                    adjacencymatrix[sourcenode][destinationnode] = 0;
+                    adjacencyMatrix[sourcenode][destinationnode] = 0;
                     continue;
                 }
-                if (adjacencymatrix[sourcenode][destinationnode] == 0) {
-                    adjacencymatrix[sourcenode][destinationnode] = MAX_VALUE;
+                if (adjacencyMatrix[sourcenode][destinationnode] == 0) {
+                    adjacencyMatrix[sourcenode][destinationnode] = MAX_VALUE;
                 }
             }
         }
@@ -94,11 +94,12 @@ public class BellmanFordUsingAdjacencyMatrix {
         source = scanner.nextInt();
 
         long startTime = System.nanoTime();
-        BellmanFordUsingAdjacencyMatrix bellmanford = new BellmanFordUsingAdjacencyMatrix(numberofvertices);
-        bellmanford.BellmanFordEvaluation(source, adjacencymatrix);
+        BellmanFordUsingAdjacencyMatrix bellmanFord = new BellmanFordUsingAdjacencyMatrix(numberofvertices);
+        bellmanFord.BellmanFordEvaluation(source, adjacencyMatrix);
         long endTime = System.nanoTime();
         long executionTime = endTime - startTime;
         System.out.println("Execution time: " + executionTime + " nanoseconds");
         scanner.close();
     }
 }
+
