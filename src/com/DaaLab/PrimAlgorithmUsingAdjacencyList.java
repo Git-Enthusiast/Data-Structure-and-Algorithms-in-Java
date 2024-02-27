@@ -1,4 +1,23 @@
 package com.DaaLab;
+
+/*
+Enter the number of vertices: 5
+Enter the number of edges: 10
+Enter edges in the format 'source destination weight':
+0 1 10
+1 2 5
+2 3 20
+3 4 30
+4 0 25
+0 2 8
+0 3 18
+1 4 15
+1 3 11
+2 4 22
+Execution Time: 123000 nanoseconds
+The sum of all the edge weights: 39
+
+ */
 import java.util.*;
 
 class Pair {
