@@ -23,26 +23,26 @@ public class ZeroOneKnapsack {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
         System.out.print("Enter the number of items: ");
-        int n = scanner.nextInt();
+        int n = input.nextInt();
 
         int[] weights = new int[n];
         int[] values = new int[n];
 
         System.out.println("Enter the weights of the items:");
         for (int i = 0; i < n; i++) {
-            weights[i] = scanner.nextInt();
+            weights[i] = input.nextInt();
         }
 
         System.out.println("Enter the values of the items:");
         for (int i = 0; i < n; i++) {
-            values[i] = scanner.nextInt();
+            values[i] = input.nextInt();
         }
 
         System.out.print("Enter the capacity of the knapsack: ");
-        int capacity = scanner.nextInt();
+        int capacity = input.nextInt();
 
         long startTime = System.nanoTime();
         int maxVal = knapsack(weights, values, capacity);
@@ -52,7 +52,7 @@ public class ZeroOneKnapsack {
         System.out.println("Maximum value that can be obtained: " + maxVal);
         System.out.println("Execution time: " + duration + " nanoseconds");
 
-        scanner.close();
+        input.close();
     }
 }
 
