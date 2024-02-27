@@ -1,5 +1,21 @@
 package com.DaaLab;
 
+/*
+Enter the size of the array: 5
+Enter the elements of the array:
+12
+67
+98
+45
+51
+Original Array:
+12 67 98 45 51
+
+Sorted Array:
+12 45 51 67 98
+Execution Time: 0 milliseconds
+
+ */
 import java.util.Scanner;
 
 public class MergeSort {
