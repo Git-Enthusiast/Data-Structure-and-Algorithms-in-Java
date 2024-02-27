@@ -1,5 +1,21 @@
 package com.DaaLab;
 
+/*
+Enter the size of the array: 5
+Enter the elements of the array:
+12
+67
+45
+06
+34
+Original Array:
+12 67 45 6 34
+
+Sorted Array:
+6 12 34 45 67
+Execution Time: 0 milliseconds
+
+ */
 import java.util.Scanner;
 
 public class QuickSort {
