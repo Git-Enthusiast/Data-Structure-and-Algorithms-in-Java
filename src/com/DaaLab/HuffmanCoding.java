@@ -1,6 +1,23 @@
 package com.DaaLab;
 
+/*
+Enter the number of characters: 5
+Enter characters and their frequencies:
+R 7
+A 8
+J 11
+A 15
+N 9
+N: 00
+J: 01
+R: 100
+A: 101
+A: 11
+Execution time: 22 milliseconds
+
+ */
 import java.util.PriorityQueue;
+import java.util.Scanner;
 
 class HuffmanNode implements Comparable<HuffmanNode> {
     char data;
@@ -58,9 +75,16 @@ public class HuffmanCoding {
     }
 
     public static void main(String[] args) {
-        // Sample characters and frequencies
-        char[] characters = {'a', 'b', 'c', 'd', 'e', 'f'};
-        int[] frequencies = {5, 9, 12, 13, 16, 45};
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of characters: ");
+        int n = scanner.nextInt();
+        char[] characters = new char[n];
+        int[] frequencies = new int[n];
+        System.out.println("Enter characters and their frequencies:");
+        for (int i = 0; i < n; i++) {
+            characters[i] = scanner.next().charAt(0);
+            frequencies[i] = scanner.nextInt();
+        }
 
         // Measure execution time
         long startTime = System.currentTimeMillis();
@@ -73,6 +97,7 @@ public class HuffmanCoding {
 
         long endTime = System.currentTimeMillis();
         System.out.println("Execution time: " + (endTime - startTime) + " milliseconds");
+
+        scanner.close();
     }
 }
-
