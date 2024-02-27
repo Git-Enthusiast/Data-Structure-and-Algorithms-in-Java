@@ -1,7 +1,5 @@
 package com.DaaLab;
 
-import java.util.Scanner;
-
 /*
 Enter the number of items: 5
 Enter the weights of the items:
@@ -21,7 +19,7 @@ Maximum value that can be obtained: 45
 Execution time: 99400 nanoseconds
 
  */
-
+import java.util.Scanner;
 public class ZeroOneKnapsack {
 
     public static int knapsack(int[] weights, int[] values, int capacity) {
