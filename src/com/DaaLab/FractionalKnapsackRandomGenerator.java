@@ -1,5 +1,10 @@
 package com.DaaLab;
 
+/*
+Maximum value in knapsack: 38841.0
+Execution time: 113 milliseconds
+
+ */
 import java.util.Arrays;
 
 class Item implements Comparable<Item> {
@@ -19,7 +24,7 @@ class Item implements Comparable<Item> {
     }
 }
 
-public class FractionalKnapsack {
+public class FractionalKnapsackRandomGenerator {
 
     public static double fractionalKnapsack(int capacity, Item[] items) {
         Arrays.sort(items);
