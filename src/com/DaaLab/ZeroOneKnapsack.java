@@ -2,6 +2,26 @@ package com.DaaLab;
 
 import java.util.Scanner;
 
+/*
+Enter the number of items: 5
+Enter the weights of the items:
+2
+3
+3
+4
+6
+Enter the values of the items:
+15
+10
+9
+20
+18
+Enter the capacity of the knapsack: 10
+Maximum value that can be obtained: 45
+Execution time: 99400 nanoseconds
+
+ */
+
 public class ZeroOneKnapsack {
 
     public static int knapsack(int[] weights, int[] values, int capacity) {
