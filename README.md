@@ -1,1 +1,1 @@
-# Java Data Structures & Algorithms Mastery Journey: From Basics to Advanced Problem-Solving
+# Embarking on a Comprehensive Journey: Mastering Java Data Structures & Algorithms alongside MERN Stack Development
