@@ -13,7 +13,7 @@ Original Array:
 
 Sorted Array:
 6 12 34 45 67
-Execution Time: 0 milliseconds
+Execution Time: 6 milliseconds
 
  */
 import java.util.Scanner;
