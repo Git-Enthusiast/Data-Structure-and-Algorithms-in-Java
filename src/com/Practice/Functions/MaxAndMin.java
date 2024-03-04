@@ -13,7 +13,33 @@ public class MaxAndMin {
     public static int findMin(int num1, int num2, int num3) {
         return Math.min(num1, Math.min(num2, num3));
     }
+    public static void max(int num1, int num2, int num3) {
+        if (num1 > num2) {
+            if (num1 > num3) {
+                System.out.println(num1 + " is the Maximum Number.");
+            } else {
+                System.out.println(num3 + " is the Maximum Number.");
+            }
+        } else if (num2 > num3) {
+            System.out.println(num2 + " is the Maximum Number.");
+        } else {
+            System.out.println(num3 + " is the Maximum Number.");
+        }
+    }
 
+    public static void min(int num1, int num2, int num3) {
+        if (num1 < num2) {
+            if (num1 < num3) {
+                System.out.println(num1 + " is the Minimum Number.");
+            } else {
+                System.out.println(num3 + " is the Minimum Number.");
+            }
+        } else if (num2 < num3) {
+            System.out.println(num2 + " is the Minimum Number.");
+        } else {
+            System.out.println(num3 + " is the Minimum Number.");
+        }
+    }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -22,6 +48,9 @@ public class MaxAndMin {
         int num1 = scanner.nextInt();
         int num2 = scanner.nextInt();
         int num3 = scanner.nextInt();
+
+        max(num1,num2,num3);
+        min(num1,num2,num3);
 
         // Find and print maximum and minimum values
         int max = findMax(num1, num2, num3);
