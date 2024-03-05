@@ -18,7 +18,7 @@ public class Sum {
 
 //        int ans = sum2();
 //        System.out.println(ans);
-
+        System.out.println(sum2());
 
         int answer = getAnswer(23,45);
         System.out.println(answer);
