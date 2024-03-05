@@ -10,6 +10,7 @@ public class Scope {
             a = 100; // reassign the origin ref variable to some other value
             System.out.println(a);
             int c = 99;
+//        System.out.println(c); // cannot use outside the block
             name = "Rajan";
             System.out.println(name);
             // values initialised in this block, will remain in block
@@ -17,7 +18,6 @@ public class Scope {
         int c = 900;
         System.out.println(a);
         System.out.println(name);
-//        System.out.println(c); // cannot use outside the block
 
         // scoping in for loops
         for (int i = 0; i < 4; i++) {
