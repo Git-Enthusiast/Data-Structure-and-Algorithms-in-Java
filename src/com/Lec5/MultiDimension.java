@@ -12,6 +12,19 @@ public class MultiDimension {
         */
         Scanner in = new Scanner(System.in);
 //        int[][] arr = new int[3][];
+        /*
+        The array arr is a two-dimensional array of integers (int[][]).
+        It has 3 rows, but the size of each row is not specified initially.
+        This means that the size of each row can be different.
+
+        In Java, when you create a two-dimensional array like this and only
+        specify the number of rows (as in new int[3][]), you're essentially
+        creating an array of arrays where the size of the second dimension
+        (i.e., the number of columns in each row) is not predetermined.
+
+        So, arr has 3 rows, but the size of each row is initially null until
+        you explicitly define it later.
+         */
 
 //        int[][] arr = {
 //                {1, 2, 3}, // 0th index
