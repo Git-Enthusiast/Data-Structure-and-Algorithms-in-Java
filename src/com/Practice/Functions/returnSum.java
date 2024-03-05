@@ -17,7 +17,7 @@ public class returnSum {
 
     }
 
-    private static double getSum(double num1, double num2) {
+    static double getSum(double num1, double num2) {
         return num1+num2;
     }
 }
