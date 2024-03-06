@@ -1,5 +1,7 @@
 package com.Lec5;
 
+import jdk.swing.interop.DropTargetContextWrapper;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -50,6 +52,10 @@ public class ColNoFixed {
 
         }
         System.out.println("]");
+        for (int row = 0; row < arr.length; row++) {
+            System.out.println(Arrays.toString(arr[row]));
+        }
+
 
 
     }
