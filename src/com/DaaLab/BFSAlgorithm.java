@@ -21,7 +21,7 @@ import java.util.*;
 public class BFSAlgorithm {
     private int V; // Number of vertices
 
-    private LinkedList<Integer> adj[]; // Adjacency list representation of graph
+    private final LinkedList[] adj; // Adjacency list representation of graph
 
     // Constructor
     BFSAlgorithm(int v) {
@@ -38,20 +38,19 @@ public class BFSAlgorithm {
 
     // Prints BFS traversal from a given source s
     void BFS(int s) {
-        boolean visited[] = new boolean[V];
+        boolean[] visited = new boolean[V];
 
         LinkedList<Integer> queue = new LinkedList<>();
 
         visited[s] = true;
         queue.add(s);
 
-        while (queue.size() != 0) {
+        while (!queue.isEmpty()) {
             s = queue.poll();
             System.out.print(s + " ");
 
-            Iterator<Integer> i = adj[s].listIterator();
-            while (i.hasNext()) {
-                int n = i.next();
+            for (Object o : adj[s]) {
+                int n = (int) o;
                 if (!visited[n]) {
                     visited[n] = true;
                     queue.add(n);
@@ -60,7 +59,7 @@ public class BFSAlgorithm {
         }
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter the number of vertices: ");
