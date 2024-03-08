@@ -38,7 +38,7 @@ abstract class TwoDimensionalShape extends Shape {
 }
 
 class Circle extends TwoDimensionalShape {
-    private double radius;
+    private final double radius;
 
     public Circle(String name, double radius) {
         super(name);
