@@ -18,7 +18,7 @@ The Transitive Closure of the Graph
  */
 import java.util.Scanner;
 
-public class FloydWarshall {
+public class  FloydWarshall {
     private final int[][] distanceMatrix;
     private final int numberOfVertices;
     public static final int INFINITY = 999;

@@ -19,7 +19,7 @@ Execution time: 13567800 nanoseconds
 import java.util.*;
 
 public class BFSAlgorithm {
-    private int V; // Number of vertices
+    private final int V; // Number of vertices
 
     private final LinkedList[] adj; // Adjacency list representation of graph
 
