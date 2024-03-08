@@ -1,5 +1,13 @@
 package com.JavaLab;
 
+/*
+     *
+    ***
+   *****
+  *******
+ *********
+
+ */
 class PrintPyramid implements Runnable {
     private final int row;
     private final int totalRows;
@@ -23,7 +31,7 @@ class PrintPyramid implements Runnable {
     }
 }
 
-public class Main {
+public class MultiThreading {
     public static void main(String[] args) {
         int totalRows = 5; // Change this to adjust the number of rows in the pyramid
         Thread[] threads = new Thread[totalRows];
