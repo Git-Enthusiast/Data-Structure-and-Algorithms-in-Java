@@ -1,6 +1,6 @@
 package com.Practice.Pattern;
 
-public class Pattern3 {
+public class Pattern_3 {
     /*
      1
     232

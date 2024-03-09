@@ -1,6 +1,19 @@
 package com.Practice.Pattern;
+/*
+## PatternWithoutArrayStringCollection
+        *
+      * *
+    * * *
+  * * * *
+* * * * *
+  * * * *
+    * * *
+      * *
+        *
 
-public class PatternWithoutArrayStringCollection {
+
+ */
+public class Pattern_0 {
     public static void main(String[] args) {
         int n = 5; // Change the value of n to adjust the size of the pattern
 
