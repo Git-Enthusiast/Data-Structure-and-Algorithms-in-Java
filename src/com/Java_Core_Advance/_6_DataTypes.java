@@ -17,7 +17,7 @@ long: 12121
 public class _6_DataTypes {
 
     // Main driver method
-    public static void main(String args[])
+    public static void main(String[] args)
     {
 
         // Creating and initializing custom character
