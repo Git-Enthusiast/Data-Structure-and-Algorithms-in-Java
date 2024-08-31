@@ -9,7 +9,8 @@ The provided code creates a two-dimensional array of strings. Here's how these e
 
 * The `main` method arguments (`String[] args`) are stored on the stack.
 * Local variables within the `main` method, including:
-    * `names`: This is a reference variable to the actual array object on the heap. It holds the memory address of the array, not the array itself.
+    * `names`: This is a reference variable to the actual array object on the heap.
+                It holds the memory address of the array, not the array itself.
     * Loop counters (`i` and `j`) are also stored on the stack.
 
 **Heap:**
