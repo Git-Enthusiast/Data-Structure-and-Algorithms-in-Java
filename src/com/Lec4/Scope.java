@@ -8,7 +8,7 @@ public class Scope {
         {
 //          int a = 78; // already initialised outside the block in the same method, hence you cannot initialise again
             a = 100; // reassign the origin ref variable to some other value
-            System.out.println(a);
+            System.out.println(a); //100
             int c = 99;
 //        System.out.println(c); // cannot use outside the block
             name = "Rajan";
