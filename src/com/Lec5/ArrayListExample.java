@@ -28,6 +28,7 @@ public class ArrayListExample {
         System.out.println(list.get(2));
 
     ArrayList<String>str= new ArrayList<>() ;
+        System.out.println(str);
         // input
         System.out.println("Please enter the element of the array list:");
         for (int i = 0; i < 5; i++) {
