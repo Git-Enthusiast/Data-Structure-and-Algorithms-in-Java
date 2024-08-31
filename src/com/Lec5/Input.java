@@ -16,7 +16,7 @@ public class Input {
         arr[3] =27;
         arr[4] =29;
 
-//          System.out.println(Arrays.toString(arr));
+          System.out.println(Arrays.toString(arr));
 //        // taking input using loop
 //        System.out.println("please enter the input of the array:");
 //         for (int i = 0 ; i< arr.length;i++){
