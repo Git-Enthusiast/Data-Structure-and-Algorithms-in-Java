@@ -31,7 +31,8 @@ public class Main {
         String[] arr = new String[4];
         System.out.println(arr[0]);
         System.out.println(Arrays.toString(arr));
-        double[] marks = new double[5];
+        double[] marks = new double[0];
+        System.out.println(Arrays.toString(marks));
 
 
     }
