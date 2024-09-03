@@ -35,5 +35,10 @@ public class Main {
         System.out.println(Arrays.toString(marks));
 
 
+        int[] anotherArray = {23,45,64,23,54};
+        System.out.println(anotherArray); // this will print the address of the array object from
+                                        // the heap memory.
+
+
     }
 }
