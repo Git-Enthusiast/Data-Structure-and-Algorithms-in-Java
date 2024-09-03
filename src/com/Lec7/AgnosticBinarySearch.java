@@ -3,7 +3,7 @@ package com.Lec7;
 public class AgnosticBinarySearch {
     public static void main(String[] args) {
         int[] arr = {99, 80, 75, 50, 11, 10, 5, 2, -3};
-        int target = 50;
+        int target = 0;
         int ans = agnosticBinarySearch(arr,target);
         System.out.println(ans);
     }
@@ -38,6 +38,6 @@ public class AgnosticBinarySearch {
                 }
             }
         }
-        return 0;
+        return -1;
     }
 }
