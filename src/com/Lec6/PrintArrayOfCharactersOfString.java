@@ -16,7 +16,7 @@ public class PrintArrayOfCharactersOfString {
     private static void ArrayOfCharacters(String str) {
         char[] arr = str.toCharArray();
         boolean first = true;
-        System.out.print("Characters as an array (with spaces): [");
+        System.out.print("Characters as an array (with spaces):\n [");
         for (char c : arr) {
             if (!first) {
                 System.out.print(", ");
@@ -30,9 +30,9 @@ public class PrintArrayOfCharactersOfString {
     private static void ArrayOfCharactersWithoutSpaces(String str){
         // Convert the string to an array of characters
         char[] charArray = str.toCharArray();
-        System.out.println(charArray);
+        System.out.println(charArray); // this will print the object address of the array.
         // Print characters as an array (ignoring spaces)
-        System.out.print("Characters as an array (ignoring spaces): [");
+        System.out.print("Characters as an array (ignoring spaces):\n [");
         boolean first = true;
         for (char ch : charArray) {
             if (ch != ' ') {
