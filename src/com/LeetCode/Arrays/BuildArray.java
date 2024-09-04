@@ -1,9 +1,13 @@
 package com.LeetCode.Arrays;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 /*
 ##  Build Array from Permutation
 
-Given a zero-based permutation nums (0-indexed), build an array ans of the same length where ans[i] = nums[nums[i]] for each 0 <= i < nums.length and return it.
+Given a zero-based permutation nums (0-indexed), build an array ans of the same
+length where ans[i] = nums[nums[i]] for each 0 <= i < nums.length and return it.
 
 A zero-based permutation nums is an array of distinct integers from 0 to nums.length - 1 (inclusive).
 
@@ -38,13 +42,18 @@ Follow-up: Can you solve it without using an extra space (i.e., O(1) memory)?
 
 
  */
-class Solution_1 {
-    public int[] buildArray(int[] nums) {
-        int[]ans = new int[nums.length];
-        for(int i =0;i<nums.length;i++){
-            ans[i] = nums[nums[i]];
+public class BuildArray {
+    public static void main(String[] args) {
+        int[] arr = {5,0,1,2,3,4};
+        int[] ans = returnedArray(arr);
+        System.out.println(Arrays.toString(ans));
+    }
+
+    private static int[] returnedArray(int[] arr) {
+        int[]ans = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+          ans[i] = arr[arr[i]];
         }
         return ans;
-
     }
 }
