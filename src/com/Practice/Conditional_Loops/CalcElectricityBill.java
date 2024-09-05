@@ -15,7 +15,6 @@ public class CalcElectricityBill {
         System.out.println("Please Enter Your Total monthly consumed Electricity Units: ");
         double consumedUnits = input.nextDouble();
         double totalBill = 0;
-
         if (consumedUnits <= 100) {
             totalBill = consumedUnits * rate1;
         } else if (consumedUnits <= 200) {
