@@ -1,7 +1,24 @@
 package com.Practice.Conditional_Loops;
 
 import java.util.Scanner;
+/*
+A perfect number is a positive integer that is equal to the sum of its proper
+positive divisors (excluding the number itself). In other words, if we add up
+all the factors of the number (excluding the number itself), the sum should
+equal the original number.
+Here's how to check if a number is perfect:
 
+Find all the proper divisors of the number (factors excluding the number itself).
+Sum these divisors.
+If the sum equals the original number, it's a perfect number.
+
+Let's look at an example:
+The number 28:
+
+Proper divisors: 1, 2, 4, 7, 14
+Sum of divisors: 1 + 2 + 4 + 7 + 14 = 28
+28 equals the sum of its proper divisors, so 28 is a perfect number.
+ */
 public class CheckPerfectNumber {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
