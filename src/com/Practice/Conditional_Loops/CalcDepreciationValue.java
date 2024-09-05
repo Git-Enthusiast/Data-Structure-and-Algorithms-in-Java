@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class CalcDepreciationValue {
     public static void main(String[] args) {
         Scanner input  = new Scanner(System.in);
-        System.out.println("Please Enter the Initial Price of the depreciating asset (Not a depreciating asset: Land, Gold etc.):  ");
+        System.out.println("Please Enter the Initial Price of the depreciating asset " +
+                            "(Not a depreciating asset: Land, Gold etc.):  ");
         double initialPrice = input.nextDouble();
         System.out.println("Please Enter the Residual Value of the depreciating asset: ");
         double residualValue = input.nextDouble();
