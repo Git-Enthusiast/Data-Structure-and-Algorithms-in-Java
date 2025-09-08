@@ -77,7 +77,7 @@ public class TypeCasting {
                 System.out.println("[Mixed Result Type] final is double: " + mixed);
 
                 // -------------------------------------------------------
-                // 6) CAST PRECEDENCE: (int)(d*s) vs ((int)d)*s are different
+                // 6) CAST PRECEDENCE: cast applies before arithmetic ops
                 // -------------------------------------------------------
                 double x = 5.9;
                 int sInt = 3;
