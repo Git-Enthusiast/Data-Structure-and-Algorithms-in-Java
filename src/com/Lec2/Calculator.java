@@ -17,16 +17,16 @@ public class Calculator {
                     if (op == '+') {
                         ans = num1 + num2;
                     }
-                    if (op == '-') {
+                    else if (op == '-') {
                         ans = num1 - num2;
                     }
-                    if (op == '*') {
+                    else if (op == '*') {
                         ans = num1 * num2;
                     }
-                    if (op == '%') {
+                    else if (op == '%') {
                         ans = num1 % num2;
                     }
-                    if (op == '/') {
+                    else if (op == '/') {
                         if (num2 > 0) {
                             ans = num1 / num2;
                         }
