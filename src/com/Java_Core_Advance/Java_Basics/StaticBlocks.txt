@@ -1,0 +1,328 @@
+/*
+===========================================================
+🔹 Static Blocks in Java — Revision Notes with Examples
+===========================================================
+
+👉 Short Version:
+A static block (aka static initializer) is a block of code
+prefixed with static { ... } that runs once when the class 
+is initialized (first active use). Commonly used for 
+class-level setup like initializing static variables, maps,
+or loading resources.
+
+---------------------------------------------
+✅ Key Properties
+---------------------------------------------
+- Declared as: static { /* code * / } inside a class.
+- Executed once when class is initialized (not per object).
+- Multiple static blocks allowed → run top to bottom.
+- Runs before main() or constructor.
+- Can access only static members directly.
+- If static block fails (unchecked exception), JVM throws
+  ExceptionInInitializerError → class becomes unusable.
+- Initialization is per ClassLoader.
+- Triggers for class initialization:
+  - new ClassName()
+  - Accessing non-constant static field
+  - Calling a static method
+  - Class.forName("pkg.ClassName")
+  - Reflection that requires init
+- Constants (static final compile-time constants) do not
+  trigger initialization → they are inlined by compiler.
+
+---------------------------------------------
+🧠 Memory Model Recap (JVM)
+---------------------------------------------
+- Class Loader: Loads bytecode of class into JVM.
+- Method Area (Class Area): Stores static variables, static
+  blocks, class metadata.
+- Heap: Stores objects created with new.
+- Stack: Stores local variables inside methods.
+
+Now, let's go through examples with comments + visualization.
+*/
+
+/////////////////////////////////////////////////////////////
+// Example 1: Minimal demo — static block runs before main
+/////////////////////////////////////////////////////////////
+
+public class StaticDemoSimple {
+    static {
+        // Executed once when class is loaded into memory
+        System.out.println("Static block: class is being initialized.");
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Inside main()");
+    }
+}
+
+/*
+🧠 Memory Visualization:
+1) ClassLoader loads StaticDemoSimple → Method Area.
+2) Static block executes immediately.
+3) Then JVM calls main().
+
+📌 Expected Output:
+Static block: class is being initialized.
+Inside main()
+*/
+
+/////////////////////////////////////////////////////////////
+// Example 2: Multiple static blocks & static variable init
+/////////////////////////////////////////////////////////////
+
+class StaticOrder {
+    static {
+        System.out.println("Static block 1");
+    }
+
+    static String msg = initializeMsg(); // static variable init
+
+    static {
+        System.out.println("Static block 2");
+    }
+
+    private static String initializeMsg() {
+        System.out.println("Static method initializeMsg()");
+        return "hello";
+    }
+
+    public static void main(String[] args) {
+        System.out.println("main() running. msg = " + msg);
+    }
+}
+
+/*
+📌 Expected Output:
+Static block 1
+Static method initializeMsg()
+Static block 2
+main() running. msg = hello
+*/
+
+/////////////////////////////////////////////////////////////
+// Example 3: Static block vs constructor
+/////////////////////////////////////////////////////////////
+
+class StaticVsConstructor {
+    static {
+        System.out.println("✅ Static block: Runs once (class load)");
+    }
+
+    StaticVsConstructor() {
+        System.out.println("🆕 Constructor: Runs when object created");
+    }
+
+    public static void main(String[] args) {
+        System.out.println("➡️ Main started");
+        new StaticVsConstructor();
+        new StaticVsConstructor();
+    }
+}
+
+/*
+📌 Expected Output:
+✅ Static block: Runs once (class load)
+➡️ Main started
+🆕 Constructor: Runs when object created
+🆕 Constructor: Runs when object created
+*/
+
+/////////////////////////////////////////////////////////////
+// Example 4: Static variable initialized via static block
+/////////////////////////////////////////////////////////////
+
+class StaticInitVar {
+    static int count;
+
+    static {
+        System.out.println("Static block initializing static variable");
+        count = 100;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("➡️ Value of count = " + count);
+    }
+}
+
+/*
+📌 Expected Output:
+Static block initializing static variable
+➡️ Value of count = 100
+*/
+
+/////////////////////////////////////////////////////////////
+// Example 5: Complex initialization (Map)
+/////////////////////////////////////////////////////////////
+
+import java.util.*;
+
+class StaticInitMap {
+    static Map<String, Integer> codeMap = new HashMap<>();
+
+    static {
+        codeMap.put("OK", 200);
+        codeMap.put("NOT_FOUND", 404);
+        codeMap.put("ERROR", 500);
+        System.out.println("Static block: codeMap initialized");
+    }
+
+    public static void main(String[] args) {
+        System.out.println("codeMap: " + codeMap);
+    }
+}
+
+/*
+📌 Expected Output:
+Static block: codeMap initialized
+codeMap: {OK=200, NOT_FOUND=404, ERROR=500}
+*/
+
+/////////////////////////////////////////////////////////////
+// Example 6: Static block with try/catch (safe init)
+/////////////////////////////////////////////////////////////
+
+import java.util.Properties;
+import java.io.InputStream;
+import java.io.IOException;
+
+class StaticLoadProperties {
+    static Properties props = new Properties();
+
+    static {
+        try (InputStream in = StaticLoadProperties.class.getResourceAsStream("/app.properties")) {
+            if (in != null) {
+                props.load(in);
+                System.out.println("Loaded properties from file");
+            } else {
+                System.out.println("No properties file, using defaults");
+                props.setProperty("app.name", "MyApp");
+            }
+        } catch (IOException e) {
+            System.err.println("Failed to load props: " + e.getMessage());
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println("App name: " + props.getProperty("app.name"));
+    }
+}
+
+/////////////////////////////////////////////////////////////
+// Example 7: Inheritance — order of static blocks & ctor
+/////////////////////////////////////////////////////////////
+
+class Parent {
+    static {
+        System.out.println("Parent static block");
+    }
+    Parent() {
+        System.out.println("Parent constructor");
+    }
+}
+
+class Child extends Parent {
+    static {
+        System.out.println("Child static block");
+    }
+    Child() {
+        System.out.println("Child constructor");
+    }
+}
+
+class StaticInheritance {
+    public static void main(String[] args) {
+        System.out.println("Main start");
+        new Child();
+    }
+}
+
+/*
+📌 Expected Output:
+Parent static block
+Child static block
+Main start
+Parent constructor
+Child constructor
+*/
+
+/////////////////////////////////////////////////////////////
+// Example 8: Trigger init with Class.forName()
+/////////////////////////////////////////////////////////////
+
+class ForNameTrigger {
+    static {
+        System.out.println("Static block: initialized via Class.forName");
+    }
+
+    public static void main(String[] args) throws Exception {
+        System.out.println("Before Class.forName");
+        Class.forName("ForNameTrigger"); // forces init
+        System.out.println("After Class.forName");
+    }
+}
+
+/*
+📌 Expected Output:
+Before Class.forName
+Static block: initialized via Class.forName
+After Class.forName
+*/
+
+/////////////////////////////////////////////////////////////
+// Example 9: Failure in static block → unusable class
+/////////////////////////////////////////////////////////////
+
+class StaticInitFailure {
+    static {
+        System.out.println("Static block start");
+        if (true) {
+            throw new RuntimeException("Initialization failed");
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println("main"); // never runs
+    }
+}
+
+/*
+📌 Expected Output:
+Static block start
+Exception in thread "main" java.lang.ExceptionInInitializerError
+    Caused by: java.lang.RuntimeException: Initialization failed
+*/
+
+/////////////////////////////////////////////////////////////
+// Example 10: Constant inlining → no class init
+/////////////////////////////////////////////////////////////
+
+class A {
+    public static final int VAL = 10; // compile-time constant
+    static {
+        System.out.println("A initialized");
+    }
+}
+
+class B {
+    public static void main(String[] args) {
+        // Using constant does not trigger init of A
+        System.out.println(A.VAL);
+    }
+}
+
+/*
+📌 Expected Output:
+10
+(A's static block does NOT run here)
+*/
+
+===========================================================
+✅ Best Practices
+- Keep static blocks small and fast.
+- Handle exceptions (can’t declare throws).
+- Prefer lazy initialization when possible.
+- Avoid environment-dependent logic in static blocks.
+===========================================================
+*/
